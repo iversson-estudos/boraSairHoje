@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITE DELA</title>
+    <style>
+    :root{
+        --primary-color:#1D1E4A;
+        --secondary-color:#E0D54A;
+    }
+    
+    body {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background-color: var(--primary-color);
+        text-align: center;
+        color:var(--secondary-color);
+    }
+    
+    p {
+        
+        font-size: 64px;
+    }
+    
+    button {
+        background-color: var(--primary-color);
+        color:var(--secondary-color);
+        border-radius: 16px;
+        font-size: 32px;
+        transition: top 0.5s ease, left 0.5s ease;
+    }
+    
+    #nao {
+        cursor: pointer;
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+    <p>VAMOS SE VER HOJE?</p>
+    <button id="sim" onclick="msgAceita()">SIM</button>
+    <button id="nao">NÃO</button>
+</body>
+<script>
+const btnNao = document.getElementById('nao');
+
+
+
+setInterval(mudaPosicao,200);
+
+function mudaPosicao() {
+
+    // Generate random top and left positions between 50 and 400
+    let randomNumberTop = Math.floor(Math.random() * (800 - 50 + 1)) + 50;
+    let randomNumberLeft = Math.floor(Math.random() * (800 - 50 + 1)) + 50;
+
+    // Set the top and left styles with 'px' units
+   
+    btnNao.style.top = randomNumberTop + 'px';
+    btnNao.style.left = randomNumberLeft + 'px';
+}
+    
+
+function msgAceita(){
+    document.body.innerHTML='';
+    const msg = document.createElement('p');
+    msg.textContent = 'COMBINADO ENTAO' ;
+    document.body.appendChild(msg);
+}
+</script>
+</html>
